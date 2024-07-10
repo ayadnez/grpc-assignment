@@ -22,11 +22,12 @@ This project is a Golang gRPC service that manages user details and includes a s
     "married": true
 }
 
-## gRPC Endpoints
+### gRPC Endpoints
 
-    GetUser: Fetches a user by ID.
-    GetUsers: Fetches multiple users by their IDs.
-    SearchUsers: Searches users based on city and marital status.
+   - GetUser: Fetches a user by ID.
+   - GetUsers: Fetches multiple users by their IDs.
+ - SearchUsers: Searches users based on city and marital status.
+
 
 Prerequisites
 
