@@ -22,14 +22,14 @@ This project is a Golang gRPC service that manages user details and includes a s
     "married": true
 }
 
-### gRPC Endpoints
+## GRPC Endpoints
 
-   - GetUser: Fetches a user by ID.
-   - GetUsers: Fetches multiple users by their IDs.
- - SearchUsers: Searches users based on city and marital status.
+- GetUser: Fetches a user by ID.
+- GetUsers: Fetches multiple users by their IDs.
+- SearchUsers: Searches users based on city and marital status.
 
 
-Prerequisites
+## Prerequisites
 
     Go 1.16+
     Protobuf compiler (protoc)
@@ -44,9 +44,10 @@ go get google.golang.org/protobuf/cmd/protoc-gen-go
 go get google.golang.org/grpc/cmd/protoc-gen-go-grpc
 
 
-Running the Grpc Server : 
-  command : go run main.go server.go 
+Running the Grpc Server :
+  command : go run main.go server.go
 
-Running the Grpc Client : 
+Running the Grpc Client :
 
    command : go run client.go
+```
