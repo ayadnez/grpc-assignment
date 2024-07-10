@@ -1,3 +1,4 @@
+
 # gRPC User Service
 
 This project is a Golang gRPC service that manages user details and includes a search capability. It simulates a database using an in-memory map and provides gRPC endpoints for fetching user details based on user IDs and search criteria.
@@ -22,32 +23,57 @@ This project is a Golang gRPC service that manages user details and includes a s
     "married": true
 }
 
-## GRPC Endpoints
 
-- GetUser: Fetches a user by ID.
-- GetUsers: Fetches multiple users by their IDs.
-- SearchUsers: Searches users based on city and marital status.
-
-
-## Prerequisites
-
-    Go 1.16+
-    Protobuf compiler (protoc)
-    gRPC Go plugin
-
-
-
-Install gRPC and Protobuf Go Plugins:
-
-go get google.golang.org/grpc
-go get google.golang.org/protobuf/cmd/protoc-gen-go
-go get google.golang.org/grpc/cmd/protoc-gen-go-grpc
-
-
-Running the Grpc Server :
-  command : go run main.go server.go
-
-Running the Grpc Client :
-
-   command : go run client.go
 ```
+
+
+
+## GRPC Endpoints 
+
+#### GetUser:
+
+```http
+  Fetches a user by ID.
+```
+
+
+#### GetUsers:
+
+```http
+ Fetches multiple users by their IDs.
+```
+
+
+
+#### SearchUsers:
+```htttp
+Searches users based on city and marital status.
+
+```
+
+
+
+## Deployment and prerequisites
+
+Go 1.16+ Protobuf compiler(protoc) 
+Grpc Go plugin 
+
+```bash
+  go get google.golang.org/grpc
+  go get google.golang.org/protobuf/cmd/protoc-gen-go
+  go get google.golang.org/grpc/cmd/protoc-gen-go-grpc
+
+```
+
+Running the Grpc server: 
+
+```bash
+go run main.go server.go
+
+```
+Running the Grpc client:
+
+```bash
+ go run client.go
+```
+
