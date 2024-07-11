@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"log"
+	"os"
 
 	"github.com/ayadnez/proto"
 	"google.golang.org/grpc"
@@ -12,7 +13,12 @@ func main() {
 
 	// connect to the grpc server
 
-	conn, err := grpc.Dial("localhost:3000", grpc.WithInsecure())
+	serverAddr := os.Getenv("GRPC_SERVER_ADDRESS")
+	if serverAddr == "" {
+		serverAddr = "grpc-server:3000" // Default to localhost
+	}
+
+	conn, err := grpc.Dial(serverAddr, grpc.WithInsecure())
 
 	if err != nil {
 		log.Fatal("failed to connect : %v", err)
@@ -26,7 +32,7 @@ func main() {
 
 	// test GetUser
 
-	testGetUser(ctx, client, 1)
+	testGetUser(ctx, client, 2)
 
 	// test GetUsers
 
@@ -42,7 +48,7 @@ func testGetUser(ctx context.Context, client proto.UserServiceClient, userId int
 	user, err := client.GetUser(ctx, &proto.UserRequestId{Id: userId})
 
 	if err != nil {
-		log.Fatal("could not get the User : %v", err)
+		log.Fatal("could not get the User : %v", err.Error())
 	}
 
 	log.Printf("User is : %v", user)
